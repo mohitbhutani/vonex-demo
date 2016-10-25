@@ -1,0 +1,33 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:inline="text">
+<head>
+    <title>Vonex - Home</title>
+    <script type='text/javascript' th:src="@{/js/jquery-1.10.2.min.js}"></script>
+</head>
+<body>
+<button id="get-api-response-button">Get Response</button>
+<div class="api-response-div" style="display: none;">
+    <img th:src="@{/images/loading.gif}" width="200 px"/>
+</div>
+<script th:inline="javascript">
+    $(document).ready(function() {
+        $("#get-api-response-button").click(function(){
+            $.ajax({
+                url:"/getAnswer",
+                type:"GET",
+                success:function(data){
+                    if(data!=undefined){
+                        data = JSON.parse(data);
+                        if(data.status=="SUCCESS"){
+                            $(".api-response-div").html(data.answer);
+                        }
+                    }
+                }
+            });
+            $(".api-response-div").show();
+        });
+
+    });
+
+</script>
+</body>
+</html>
