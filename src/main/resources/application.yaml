@@ -1,0 +1,3 @@
+spring:
+  api:
+    retryLimit: 10
