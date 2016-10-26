@@ -33,7 +33,6 @@ public class HomeServiceTest {
         InitialRequest initialRequest = homeService.getInitialRequest();
         assertTrue(!ObjectUtils.isEmpty(initialRequest) && initialRequest.getRequest() !=null);
         Token token = homeService.getToken(initialRequest);
-        assertTrue("Method ran fine, but error was received",!ObjectUtils.isEmpty(token) && token.getError() !=null);
         assertTrue("Answer was received",!ObjectUtils.isEmpty(token) && token.getAnswer() !=null);
     }
 
