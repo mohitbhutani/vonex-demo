@@ -20,6 +20,11 @@ Spring Boot can be started with gradle use the following command
 > gradle bootRun
 
 
+### Open project
+
+> localhost:8080
+
+
 Security Update for Java 7
 
 Enabled TLS 1.2 for Java 7 version.Java8 by default uses TLS 1.2 for SSL. Check https://blogs.oracle.com/java-platform-group/entry/java_8_will_use_tls for more information
