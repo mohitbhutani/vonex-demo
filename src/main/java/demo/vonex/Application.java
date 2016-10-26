@@ -15,8 +15,10 @@ public class Application {
 
 	@Bean
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
+		System.setProperty("https.protocols", "TLSv1.2,TLSv1.1,TLSv1");
+		System.setProperty("https.cipherSuites", "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256");
 		RestTemplate restTemplate = builder.build();
 		restTemplate.setErrorHandler(new ApiResponseErrorHandler());
-		return restTemplate;
+		return restTemplate	;
 	}
 }
